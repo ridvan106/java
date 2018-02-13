@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 /**
- * Created by oem on 2/9/18.
+ * Created by Rıdvan Demirci on 2/9/18.
  */
 public class LinkList<E> implements Iterable<E> {
     private Node<E> root;
