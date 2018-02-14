@@ -13,7 +13,8 @@ public class circularList<E> {
             datas[(last+1)%place] = datt;
         }
         else{
-            throw  new NullPointerException();
+            newPlace();
+            datas[(last+1)%place] = datt;
         }
         if(size == 0)
             first++;
@@ -21,6 +22,22 @@ public class circularList<E> {
         size++;
 
     }
+
+    private void newPlace() {
+        E [] temp = datas;
+        place *=2;
+        datas =(E[])  new Object[place];
+        int j = 0;
+        for (int i = 0; i < temp.length ; i++) {
+            if(temp[i] != null) {
+                datas[j] = temp[i];
+                j++;
+            }
+        }
+        this.first = 0;
+        this.last =j-1;
+    }
+
     public void remove(int index){
         if(index == last)
             last--;
